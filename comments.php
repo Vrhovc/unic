@@ -9,16 +9,14 @@
  *
  * @package unic
  */
-?>
 
-<?php
-	/*
-	 * If the current post is protected by a password and
-	 * the visitor has not yet entered the password we will
-	 * return early without loading the comments.
-	 */
-	if ( post_password_required() )
-		return;
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() )
+	return;
 ?>
 
 	<div id="comments" class="comments-area">
@@ -36,9 +34,9 @@
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="navigation-comment" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'unic' ); ?></h1>
-			<div class="previous"><?php previous_comments_link( __( '&larr; Older Comments', 'unic' ) ); ?></div>
-			<div class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'unic' ) ); ?></div>
-		</nav><!-- #comment-nav-before -->
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'unic' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'unic' ) ); ?></div>
+		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
 
 		<ol class="comment-list">
@@ -56,8 +54,8 @@
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation-comment" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'unic' ); ?></h1>
-			<div class="previous"><?php previous_comments_link( __( '&larr; Older Comments', 'unic' ) ); ?></div>
-			<div class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'unic' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'unic' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'unic' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
 

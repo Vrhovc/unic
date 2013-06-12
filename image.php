@@ -35,8 +35,8 @@ get_header();
 					</div><!-- .entry-meta -->
 
 					<nav role="navigation" id="image-navigation" class="navigation-image">
-						<div class="previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'unic' ) ); ?></div>
-						<div class="next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'unic' ) ); ?></div>
+						<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'unic' ) ); ?></div>
+						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'unic' ) ); ?></div>
 					</nav><!-- #image-navigation -->
 				</header><!-- .entry-header -->
 
@@ -76,13 +76,13 @@ get_header();
 								}
 							?>
 
-							<a href="<?php echo $next_attachment_url; ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
+							<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
 								$attachment_size = apply_filters( 'unic_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
-								echo wp_get_attachment_image( $post->ID, $attachment_size );
+								echo wp_get_attachment_image( get_the_ID(), $attachment_size );
 							?></a>
 						</div><!-- .attachment -->
 
-						<?php if ( ! empty( $post->post_excerpt ) ) : ?>
+						<?php if ( has_excerpt() ) : ?>
 						<div class="entry-caption">
 							<?php the_excerpt(); ?>
 						</div><!-- .entry-caption -->
@@ -90,7 +90,12 @@ get_header();
 					</div><!-- .entry-attachment -->
 
 					<?php the_content(); ?>
-					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'unic' ), 'after' => '</div>' ) ); ?>
+					<?php
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . __( 'Pages:', 'unic' ),
+							'after'  => '</div>',
+						) );
+					?>
 
 				</div><!-- .entry-content -->
 

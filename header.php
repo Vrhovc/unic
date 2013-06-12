@@ -9,16 +9,13 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-
-<?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width" />
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" rel="icon" type="image/x-icon" />
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class('grid-container'); ?>>
@@ -30,12 +27,14 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
 
-		<nav id="site-navigation" class="navigation-main" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'unic' ); ?></h1>
-			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'unic' ); ?>"><?php _e( 'Skip to content', 'unic' ); ?></a></div>
-
+		<nav id="site-navigation" class="navigation-main grid-100 hide-on-mobile" role="navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
+		
+		<nav id="site-navigation-select" class="navigation-main-select hide-on-desktop mobile-grid-100" role="navigation">
+			<?php wp_nav_menu_select( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #site-navigation-select -->
+		
 	</header><!-- #masthead -->
 
 	<div id="main" class="site-main">
