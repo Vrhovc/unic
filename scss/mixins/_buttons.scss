@@ -1,0 +1,45 @@
+@mixin button ($background-color: red, $fontcolor: #ffffff, $border-radius: 5px) {
+
+	color: $fontcolor;
+	
+	text-decoration: none;
+	cursor: pointer;
+	
+	vertical-align: middle;
+	background-color: $background-color;
+
+	background-image: -moz-linear-gradient(top, lighten($background-color, 10%), $background-color);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(lighten($background-color, 10%)), to($background-color));
+	background-image: -webkit-linear-gradient(top, lighten($background-color, 10%), $background-color);
+	background-image: -o-linear-gradient(top, lighten($background-color, 10%), $background-color);
+	background-image: linear-gradient(to bottom, lighten($background-color, 10%), $background-color);
+	background-repeat: repeat-x;
+	border-radius: $border-radius;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.25); 
+	
+	padding: .5em 1em;
+	  
+		&:hover {
+			background-image: -moz-linear-gradient(top, lighten(darken($background-color, 10%), 10%), darken($background-color, 10%));
+			background-image: -webkit-gradient(linear, 0 0, 0 100%, from(lighten(darken($background-color, 10%), 10%)), to(darken($background-color, 10%)));
+			background-image: -webkit-linear-gradient(top, lighten(darken($background-color, 10%), 10%), darken($background-color, 10%));
+			background-image: -o-linear-gradient(top, lighten(darken($background-color, 10%), 10%), darken($background-color, 10%));
+			background-image: linear-gradient(to bottom, lighten(darken($background-color, 10%), 10%), darken($background-color, 10%));
+			text-decoration:none;		
+	  	}	
+
+}	
+
+/* USAGE:		  
+.button,
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] { 
+	@include button();
+
+}
+*/

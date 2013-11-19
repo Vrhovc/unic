@@ -9,26 +9,48 @@ License: GNU General Public License
 License URI: license.txt 
 ************************************************ */
 
-/*	Variables	*/
+//	Base Variables
 $grid-max-width	: 1200px;
 $base-font: sans-serif;
-$header-font: $base-font; // you can refer to other variables
+$base-font-size: 12px;
+$header-font: $base-font;
 $vspacing: 1.5em;
 
+
+// 	Color Scheme 
+//	Useful: http://colorschemedesigner.com/
+$color-primary   : rgb(20,53,173);
+$color-secondary : rgb(44,62,130);
+$color-tertiary  : rgb(7,29,112);
+$color-quadrary  : rgb(72,103,214);
+
 /*	Reset	*/
-@import "compass/reset";
-
-/*	Unsemantic Grid	*/
-@import "css/unsemantic/unsemantic-grid-base";
-@import "css/unsemantic/unsemantic-grid-mobile";
-// @import "css/unsemantic/unsemantic-grid-tablet";
-@import "css/unsemantic/unsemantic-grid-desktop";
-
-/*	Custom Mixins	*/
-@import "css/mixins";
-
-/*	Unic Base	*/
-@import "css/sassy_s/base"; 
+@import "scss/normalize"; 
 
 /*	Web Fonts	*/
-@import "css/webfonts/sanchez";
+//@import "scss/fonts/droidsans";
+
+
+/*	Unsemantic Grid	*/
+@import "scss/unsemantic/unsemantic-grid-responsive-no-ie7";
+
+//	Mixins
+@import 'scss/mixins/replace-text';
+@import 'scss/mixins/border-radius';
+@import 'scss/mixins/buttons';
+@import 'scss/mixins/clearfix';
+@import 'scss/mixins/drop-shadow';
+@import 'scss/mixins/gradient';
+@import 'scss/mixins/transition';
+
+/*	Theme	*/
+@import 'scss/global';
+@import 'scss/typography';
+@import 'scss/menu';
+@import 'scss/content';
+@import 'scss/media';
+@import 'scss/navigation';
+@import 'scss/comments';
+@import 'scss/widgets';
+@import 'scss/infinitescroll';
+@import 'scss/other';
