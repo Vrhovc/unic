@@ -1,4 +1,4 @@
-@mixin gradient($startColor: white, $endColor:gray - 2) {
+@mixin gradient($startColor: $color-highlight, $endColor: saturate($color-highlight, 10%) ) {
   background:$startColor; // fallback
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($startColor)}', endColorstr='#{ie-hex-str($endColor)}',GradientType=0 ); // IE 6-8
   background:-ms-linear-gradient(top, $startColor 0%, $endColor 100%); // IE 10+
