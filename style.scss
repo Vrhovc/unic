@@ -48,6 +48,7 @@ $color-bg-secondary : rgb(244,244,244);
 @import 'scss/mixins/transition';
 
 /*	Theme	*/
+@import 'scss/layout';
 @import 'scss/global';
 @import 'scss/typography';
 @import 'scss/menu';
