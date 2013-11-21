@@ -1,11 +1,11 @@
 <?php
 /**
-Template Name: Full Width Page
+Template Name: Right Sidebar
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area grid-100">
+	<div id="primary" class="content-area grid-75 mobile-grid-100">
 		<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -23,4 +23,5 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
+<?php get_sidebar('right'); ?>
 <?php get_footer(); ?>
