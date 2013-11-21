@@ -5,6 +5,9 @@
  * @package unic
  */
 
+/* Hide Option Tree Admin Pages From WP Admin (Only When Development Is Complete!!) */ 
+#add_filter( 'ot_show_pages', '__return_false' );
+ 
 if ( ! function_exists( 'unic_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
