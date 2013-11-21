@@ -1,18 +1,13 @@
-UNIC = _s + unsemantic + sass + ♥
-===
-README IS TODO!! :)
-===
-UNIC is a base theme for Wordpress for developers to build upon. It is my favorite way to theme for Wordpress from scratch. I started with Automattic's underscores base theme and combined it with the Unsemantic grid system. Then I reworked the default CSS to SASS and added some of my own additional stuff.
+#UNIC
+##_s + unsemantic + sass + ♥
 
-If you find it useful, please enjoy.
+UNIC is a base theme for Wordpress for developers to build upon. It is my favorite way to theme for Wordpress from scratch. I started with Automattic's underscores base theme and combined it with the Unsemantic grid system. Then I reworked the default CSS to SASS and added some of my own additional stuff. I use it all the time. If you do as well, please let me know, I'd love to hear your feedback.
 
-#FEATURE NOTES
+##Features & Notes
 
 
-##Built on the Unsemantic Grid
-The most flexible and logical grid system there is. 
-
-You can read the full syntax over at http://unsemantic.com.
+###Built on the Unsemantic Grid
+IMHO, Undemantic is the most flexible and logical grid system there is. You can read the full syntax over at http://unsemantic.com.
 
 The theme also includes a shortcode system to include grids in post content.
 
@@ -27,16 +22,19 @@ The theme also includes a shortcode system to include grids in post content.
 
 Simple as that!
 
-##Easy web font support via SASS
+###Easy web font support via SASS
 The main style.css is build with style.sass in the theme root folder. It includes various files from the /sass/ folder, which can be easily customized to your needs.
 
-Here are some examples:
+###Smart SASS Structure & Variables
+###SASS Gradients
+###Easy Web Fonts
 
-###Easy Variables
-###SASS Gradient
-###Web Fonts
+###Built in responsive menu system / functions
+Uses a simple function which works like the standard WP menu function. By default the theme shows and hides the menus via Unsemantic responsive classes.
 
-##Built it responsive menu system / functions
+`
+	<?php wp_nav_menu_select( array( 'theme_location' => 'primary' ) ); ?>
+`
 
 
 ##Shortcodes Power
