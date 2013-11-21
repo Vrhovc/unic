@@ -51,9 +51,9 @@ Years of hunting and gathering the simplest and most efficient mixins. All defin
 
 ````
     @mixin border-radius($radius:5px)
-	@mixin button ($background-color: red, $fontcolor: #ffffff, $border-radius: 5px)
+	@mixin button ($background-color: $color-highlight, $fontcolor: #ffffff, $border-radius: 5px)
 	@mixin clearfix()
-	@mixin gradient($startColor: white, $endColor:gray - 2)
+	@mixin gradient($startColor: $color-highlight, $endColor: saturate($color-highlight, 10%) ) 
 	@mixin drop-shadow($color:rgba(0,0,0,0.2), $blur:0, $x:2px, $y:2px)
 	@mixin transition($transition:all 0.2s)
 	
