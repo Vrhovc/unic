@@ -11,19 +11,13 @@ IMHO, Undemantic is the most flexible and logical grid system there is. You can 
 
 The theme also includes a shortcode system to include grids in post content.
 
-`
-
+````
     [grid 33] A 33% width grid [/grid]
-	
 	[grid 33] A 33% width grid [/grid]
-	
 	[grid 33] A 33% width grid [/grid]
-`
+````
 
 Simple as that!
-
-###Easy web font support via SASS
-The main style.css is build with style.sass in the theme root folder. It includes various files from the /sass/ folder, which can be easily customized to your needs.
 
 ###Smart SASS Structure & Variables
 Easily modify theme wide settings in the style.sass master file.
@@ -48,9 +42,9 @@ Set a few variables in the master file and cheangeup your color scheme.
 ````
 
 ###Easy Web Fonts
-Create easy webfont import files using Google's code:
+Create easy and reusable web font import files using your webfont provider's CSS code:
 
-*unic/scss/fonts._droidsans.scss*
+*unic/scss/fonts/_droidsans.scss*
     
 ````	
 	/* CSS from webfont provider. */
@@ -68,7 +62,7 @@ Create easy webfont import files using Google's code:
 	}
 ````
 
-Then simply add to the masterfile to include one or another font:
+Then simply add to the masterfile to include one or another font, and use as directed...
 
 ````
 	@import "scss/fonts/droidsans";

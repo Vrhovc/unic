@@ -80,3 +80,8 @@ require get_template_directory() . '/inc/select-menu-widget.php';
  * Load Shortcode Functions
  */
 require get_template_directory() . '/inc/shortcodes.php';
+
+/**
+ * Load WooCommerce Features
+ */
+require get_template_directory() . '/inc/woocommerce.php';
