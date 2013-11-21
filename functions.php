@@ -44,6 +44,13 @@ function unic_setup() {
 endif; // unic_setup
 add_action( 'after_setup_theme', 'unic_setup' );
 
+
+/**
+ * Register Third Party Libraries
+ */
+require get_template_directory() . '/inc/third-party.php';	
+
+
 /**
  * Register Sidebars and Widgets.
  */
