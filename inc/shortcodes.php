@@ -26,7 +26,7 @@ add_shortcode( 'grid', 'grid_shortcode' );
 
 
 /**
- * Add shortcodes to widget text
+ * Add shortcodes functionality to widget text
  */
 add_filter('widget_text', 'do_shortcode');
 
