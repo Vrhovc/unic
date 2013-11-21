@@ -19,10 +19,15 @@ $vspacing: 1.5em;
 
 // 	Color Scheme 
 //	Useful: http://colorschemedesigner.com/
-$color-primary   : rgb(20,53,173);
-$color-secondary : rgb(44,62,130);
-$color-tertiary  : rgb(7,29,112);
-$color-quadrary  : rgb(72,103,214);
+$color-primary   : rgb(20,53,173);  //Type Base
+$color-secondary : rgb(44,62,130);  //Type Headers
+$color-tertiary  : rgb(7,29,112);   //Type Alternate / Links
+
+$color-highlight  : rgb(72,103,214); //Alert/Highlight/Hover
+$color-accent : rgb(72,103,214); //Design Accents
+
+$color-bg-primary : rgb(255,255,255);
+$color-bg-secondary : rgb(244,244,244);
 
 /*	Reset	*/
 @import "scss/normalize"; 
@@ -35,7 +40,6 @@ $color-quadrary  : rgb(72,103,214);
 @import "scss/unsemantic/unsemantic-grid-responsive-no-ie7";
 
 //	Mixins
-@import 'scss/mixins/replace-text';
 @import 'scss/mixins/border-radius';
 @import 'scss/mixins/buttons';
 @import 'scss/mixins/clearfix';

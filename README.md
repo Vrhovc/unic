@@ -35,10 +35,28 @@ Easily modify theme wide settings in the style.sass master file.
 Set a few variables in the master file and cheangeup your color scheme.
 
 ````
-	$color-primary   : rgb(20,53,173);
-	$color-secondary : rgb(44,62,130);
-	$color-tertiary  : rgb(7,29,112);
-	$color-quadrary  : rgb(72,103,214);
+$color-primary   : rgb(20,53,173);  //Type Base
+$color-secondary : rgb(44,62,130);  //Type Headers
+$color-tertiary  : rgb(7,29,112);   //Type Alternate / Links
+
+$color-highlight  : rgb(72,103,214); //Alert/Highlight/Hover
+$color-accent : rgb(72,103,214); //Design Accents
+
+$color-bg-primary : rgb(255,255,255);
+$color-bg-secondary : rgb(244,244,244);
+````
+
+###Cool SASS Mixins
+Years of hunting and gathering the simplest and most efficient mixins. All defined in /scss/mixins/
+
+````
+    @mixin border-radius($radius:5px)
+	@mixin button ($background-color: red, $fontcolor: #ffffff, $border-radius: 5px)
+	@mixin clearfix()
+	@mixin gradient($startColor: white, $endColor:gray - 2)
+	@mixin drop-shadow($color:rgba(0,0,0,0.2), $blur:0, $x:2px, $y:2px)
+	@mixin transition($transition:all 0.2s)
+	
 ````
 
 ###Easy Web Fonts

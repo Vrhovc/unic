@@ -3,7 +3,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: $color-primary;
 	font-family: $base-font;
 	font-size: $base-font-size;
 	line-height: 1.5;
@@ -211,13 +211,13 @@ textarea {
 
 /* Links */
 a {
-	color: royalblue;
+	color: $color-tertiary;
 	   
 	 &:hover, &:active, &:focus {
-        color: midnightblue;
+        color: $color-highlight;
     }
-
-}
-a:visited {
-	color: purple;
+	
+	&:visited {
+		color: $color-tertiary;
+	}
 }
