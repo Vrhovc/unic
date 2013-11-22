@@ -46,6 +46,7 @@ $color-bg-secondary : rgb(244,244,244);
 @import 'scss/mixins/drop-shadow';
 @import 'scss/mixins/gradient';
 @import 'scss/mixins/transition';
+@import 'scss/mixins/image-effects';
 
 /*	Theme	*/
 @import 'scss/layout';
@@ -58,4 +59,5 @@ $color-bg-secondary : rgb(244,244,244);
 @import 'scss/comments';
 @import 'scss/widgets';
 @import 'scss/infinitescroll';
+@import 'scss/woocommerce';
 @import 'scss/other';
