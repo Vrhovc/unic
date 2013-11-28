@@ -1,79 +1,37 @@
 <?php
-function wp_nav_menu_select_sort($a, $b)
-{
-    return $a = $b;
+
+class Walker_Nav_Menu_Select extends Walker_Nav_Menu {
+	function start_lvl(&$output, $depth){
+		$indent = str_repeat("\t", $depth); // don't output children opening tag (`<ul>`)
+	}
+ 
+	function end_lvl(&$output, $depth){
+		$indent = str_repeat("\t", $depth); // don't output children closing tag
+	}
+ 
+	function start_el(&$output, $item, $depth, $args) {
+		$indent = str_repeat("-", $depth);
+		$selected = ( in_array("current-menu-item", $item->classes) ) ? ' selected' : '';
+ 		$url = '#' !== $item->url ? $item->url : '';
+ 		$output .= '<option value="' . $url . '"'.$selected.'>' . $indent.$item->title;
+	}	
+ 
+	function end_el(&$output, $item, $depth){
+		$output .= "</option>\n"; // replace closing </li> with the option tag
+	}
 }
 
 function wp_nav_menu_select($args = array())
 {
     $defaults = array(
         'theme_location' => '',
-        'menu_class' => 'select-menu'
+        'menu_class' 	 => 'select-menu',
+		'walker'         => new Walker_Nav_Menu_Select(),
+		'orderby' 		 => 'menu_order',
+		'items_wrap'     => '<select id="menu-'.$args['theme_location'].'" class="'.$args['menu_class'].'" onchange="if (this.value) window.location.href=this.value">%3$s</select>'
     );
     $args     = wp_parse_args($args, $defaults);
-    if (($menu_locations = get_nav_menu_locations()) && isset($menu_locations[$args['theme_location']])) {
-        $menu       = wp_get_nav_menu_object($menu_locations[$args['theme_location']]);
-        $args       = array(
-            'orderby' => 'menu_order',
-            'output' => ARRAY_N
-        );
-        $menu_items = wp_get_nav_menu_items($menu->term_id, $args);
-        $children   = array();
-        $parents    = array();
-        foreach ($menu_items as $id => $data) {
-            if (empty($data->menu_item_parent)) {
-                $top_level[$data->ID] = $data;
-            } else {
-                $children[$data->menu_item_parent][$data->ID] = $data;
-            }
-        }
-        foreach ($top_level as $id => $data) {
-            foreach ($children as $parent => $items) {
-                if ($id == $parent) {
-                    $menu_item[$id] = array(
-                        'parent' => true,
-                        'item' => $data,
-                        'children' => $items
-                    );
-                    $parents[]      = $parent;
-                }
-            }
-        }
-        foreach ($top_level as $id => $data) {
-            if (!in_array($id, $parents)) {
-                $menu_item[$id] = array(
-                    'parent' => false,
-                    'item' => $data
-                );
-            }
-        }
-?>
-            <select id="menu-<?php echo $args['theme_location'] ?>" class="<?php echo $args['menu_class'] ?>" ONCHANGE="location = this.options[this.selectedIndex].value;">
-                <option value=""><?php _e( 'Navigation' ); ?></option>
-                <?php foreach ( $menu_item as $id => $data ) : ?>
-                    <?php if ( $data['parent'] == true ) : ?>
-                        <optgroup label="<?php echo $data['item']->title ?>">
-                            <option value="<?php echo $data['item']->url ?>"><?php echo $data['item']->title ?></option>
-                            <?php foreach ( $data['children'] as $id => $child ) : ?>
-                                <option value="<?php echo $child->url ?>"><?php echo $child->title ?></option>
-                            <?php endforeach; ?>
-                        </optgroup>
-                    <?php else : ?>
-                        <option value="<?php echo $data['item']->url ?>"><?php echo $data['item']->title ?></option>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </select>
-			<script type="text/javascript">
-				jQuery('#menu-<?php echo $args['theme_location'] ?> option[value="' + document.URL + '"]').attr('selected','selected');
-			</script>
-        <?php
-    } else {
-        ?>
-            <select class="menu-not-found">
-                <option value=""><?php _e( 'Menu Not Found' ); ?></option>
-            </select>
-        <?php
-    }
+	
+	wp_nav_menu( $args );
 }
-
 ?>	
