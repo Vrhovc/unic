@@ -20,4 +20,7 @@ function unic_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'unic_scripts' );
 
+//Remove default gallery style in exchange for fluid gallery columns via scss
+add_filter( 'use_default_gallery_style', '__return_false' );
+
 ?>

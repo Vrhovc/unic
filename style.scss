@@ -50,15 +50,11 @@ $color-bg-secondary : rgb(244,244,244);
 
 /*	Theme	*/
 @import 'scss/layout';
-@import 'scss/global';
 @import 'scss/typography';
 @import 'scss/menu';
-@import 'scss/content';
-@import 'scss/media';
-@import 'scss/navigation';
-@import 'scss/comments';
+@import 'scss/wordpress';
+@import 'scss/wordpress_media';
 @import 'scss/widgets';
-@import 'scss/infinitescroll';
 @import 'scss/woocommerce';
 @import 'scss/other';
 
