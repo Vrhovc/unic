@@ -1,7 +1,4 @@
 <?php
-/**
-Template Name: Full Width Page
- */
 
 get_header(); ?>
 
