@@ -7,7 +7,7 @@
 ?>
 	<div id="secondary" class="widget-area grid-25 mobile-grid-100" role="complementary">
 		<?php do_action( 'before_sidebar' ); ?>
-		<?php if ( ! dynamic_sidebar( 'sidebar-left' ) ) : ?>
+		<?php if ( ! dynamic_sidebar( 'sidebar-right' ) ) : ?>
 
 			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>

@@ -8,7 +8,13 @@
 	select {
 		max-width: 100%;
 	}
-
+	
+	ul { 
+		margin: 0 0 0 1em;
+		padding: 0;
+		list-style-type: none;
+	} 
+	
 	/* Search widget */
 	#searchsubmit {
 		display: none;
