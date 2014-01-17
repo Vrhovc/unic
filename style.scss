@@ -32,10 +32,6 @@ $color-bg-secondary : rgb(244,244,244);
 /*	Reset	*/
 @import "scss/normalize"; 
 
-/*	Web Fonts	*/
-@import "scss/fonts/font-awesome/font-awesome";
-//@import "scss/fonts/droidsans";
-
 
 /*	Unsemantic Grid	*/
 @import "scss/unsemantic/unsemantic-grid-responsive-no-ie7";
@@ -48,6 +44,10 @@ $color-bg-secondary : rgb(244,244,244);
 @import 'scss/mixins/gradient';
 @import 'scss/mixins/transition';
 @import 'scss/mixins/image-effects';
+
+/*	Web Fonts	*/
+@import "scss/fonts/font-awesome/font-awesome";
+@import "scss/fonts/opensans";
 
 /*	Theme	*/
 @import 'scss/layout';
