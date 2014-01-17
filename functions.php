@@ -47,6 +47,11 @@ function unic_setup() {
 endif; // unic_setup
 add_action( 'after_setup_theme', 'unic_setup' );
 
+/**
+ * Create Pages and Settings on First Activation
+ */
+require get_template_directory() . '/inc/on-activation.php';	
+
 
 /**
  * Register Third Party Libraries
