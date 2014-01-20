@@ -50,14 +50,11 @@ $color-bg-secondary : rgb(244,244,244);
 @import "scss/fonts/opensans";
 
 /*	Theme	*/
-@import 'scss/layout';
 @import 'scss/typography';
-@import 'scss/menu';
 @import 'scss/wordpress';
-@import 'scss/wordpress_media';
-@import 'scss/widgets';
+@import 'scss/menu';
+@import 'scss/theme';
 @import 'scss/woocommerce';
-@import 'scss/other';
 
 /* Third Party */
 @import 'scss/magnific-popup.scss';
