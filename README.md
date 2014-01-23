@@ -60,7 +60,25 @@ Years of hunting and gathering the simplest and most efficient mixins. All defin
 ````
 
 ###Easy Web Fonts
-Create easy and reusable web font import files using your webfont provider's CSS code:
+Using the bulletproof font syntax from Font Squirrel, we have an easy mixin for local webfonts.
+
+````
+    @mixin add-font-face($font-family, $font-folder, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) { ... }
+````
+
+So we simply include a font file in the master style.scss
+
+*@import "scss/fonts/opensans";*
+
+```
+@include add-font-face('Open Sans', 'scss/fonts/opensans', 'OpenSans-Regular-webfont', normal);
+@include add-font-face('Open Sans', 'scss/fonts/opensans', 'OpenSans-Light-webfont', light);
+@include add-font-face('Open Sans', 'scss/fonts/opensans', 'OpenSans-Bold-webfont', bold);
+
+````
+
+Alternatively, you can embed web fonts directly from an online provider:
+
 
 *unic/scss/fonts/_droidsans.scss*
     
@@ -82,9 +100,6 @@ Create easy and reusable web font import files using your webfont provider's CSS
 
 Then simply add to the masterfile to include one or another font, and use as directed...
 
-````
-	@import "scss/fonts/droidsans";
-````
 
 ###Built in responsive menu system / functions
 Uses a simple function which works like the standard WP menu function. By default the theme shows and hides the menus via Unsemantic responsive classes.
