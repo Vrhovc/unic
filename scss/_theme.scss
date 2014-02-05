@@ -1,5 +1,14 @@
 .home .entry-header { display: none; }
 
+.button,
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] { 
+	@include button(#f5bd32, #ef8908 );
+
+}
+
 /* Responsive Adjustments */
 
 @media screen and (max-width: 767px) {
